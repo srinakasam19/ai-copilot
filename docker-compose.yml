@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: copilot_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: copilot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: copilot_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: always
+
+  backend:
+    build: ./backend
+    container_name: copilot_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/copilot
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=qwen2.5-coder:3b
+      - WORKSPACE_DIR=/app/temp_repos
+      - FAISS_DIR=/app/faiss_indices
+    volumes:
+      - ./backend/temp_repos:/app/temp_repos
+      - ./backend/faiss_indices:/app/faiss_indices
+    depends_on:
+      - db
+      - ollama
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: copilot_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  pgdata:
+  ollama_data:

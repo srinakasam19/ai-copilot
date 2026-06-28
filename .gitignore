@@ -1,0 +1,42 @@
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/.venv/
+
+# Node.js
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.cache/
+
+# Databases & Logs
+*.db
+*.log
+backend/copilot.db
+backend/uvicorn.log
+
+# RAG & Temp Repos
+faiss_indices/
+temp_repos/
+backend/faiss_indices/
+backend/temp_repos/
+
+# IDE settings
+.vscode/
+.idea/
+.gemini/
+.agents/
+
+# Environment configurations
+.env
+backend/.env
