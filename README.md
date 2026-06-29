@@ -55,8 +55,6 @@ Build a semantic knowledge base using **FAISS** and **sentence-transformers/all-
 
 # 🏗️ System Architecture
 
-# 🏗️ System Architecture
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5ac9c914-4b9a-45e8-a07a-d4435e1273fe" alt="AI Engineering Copilot Architecture" width="100%">
 </p>
