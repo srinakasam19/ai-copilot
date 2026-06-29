@@ -220,4 +220,14 @@ Contributions, feature requests, and suggestions are welcome.
 
 Feel free to fork the repository and submit a pull request.
 
+Images:
+
+<img width="1918" height="878" alt="image" src="https://github.com/user-attachments/assets/c1be2827-87d1-4799-af5a-f51a8044c6b7" />
+<img width="1907" height="837" alt="image" src="https://github.com/user-attachments/assets/0ec75bb1-1150-4b51-b5f6-7a3f3d10846e" />
+<img width="1721" height="895" alt="image" src="https://github.com/user-attachments/assets/7a3bd850-cddd-46a5-a21e-bd59917dd8d0" />
+<img width="1605" height="877" alt="image" src="https://github.com/user-attachments/assets/76f7f1c5-078c-4c1c-a09e-5e190c4df498" />
+
+
+
+
 
